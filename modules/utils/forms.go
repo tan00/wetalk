@@ -105,7 +105,7 @@ type FormSets struct {
 	Locale    FormLocaler
 	inited    bool
 	form      interface{}
-	errs      map[string]*validation.Error
+	errs      map[string][]*validation.Error
 }
 
 func (this *FormSets) SetError(fieldName, errMsg string) {
@@ -115,7 +115,7 @@ func (this *FormSets) SetError(fieldName, errMsg string) {
 }
 
 // create formSets for generate label/field html code
-func NewFormSets(form interface{}, errs map[string]*validation.Error, locale FormLocaler) *FormSets {
+func NewFormSets(form interface{}, errs map[string][]*validation.Error, locale FormLocaler) *FormSets {
 	fSets := new(FormSets)
 	fSets.errs = errs
 	fSets.Fields = make(map[string]*FieldSet)
@@ -268,7 +268,9 @@ outFor:
 		// create error string
 		if errs != nil {
 			if err, ok := errs[name]; ok {
-				fSet.Error = locale.Tr(err.Tmpl, err.LimitValue)
+				for _, v := range err {
+					fSet.Error += locale.Tr(v.Tmpl, v.LimitValue)
+				}
 			}
 		}
 
