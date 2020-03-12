@@ -7,6 +7,10 @@ An open source project for Gopher community.
 ```
 cd /path/to/wetalk
 go mod init wetalk
+```
+add 'replace github.com/beego/wetalk => /path/to/local/wetalk'  in go.mod
+
+```
 go mod tidy
 ```
 
