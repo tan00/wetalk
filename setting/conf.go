@@ -180,7 +180,7 @@ func LoadConfig() *goconfig.ConfigFile {
 	// session settings
 	beego.BConfig.WebConfig.Session.SessionOn = true
 	beego.BConfig.WebConfig.Session.SessionProvider = Cfg.MustValue("session", "session_provider", "file")
-	//beego.BConfig.WebConfig.Session.SessionSavePath = Cfg.MustValue("session", "session_path", "sessions")
+	beego.BConfig.WebConfig.Session.SessionProviderConfig = Cfg.MustValue("session", "session_provider_config", "/tmp")
 	beego.BConfig.WebConfig.Session.SessionName = Cfg.MustValue("session", "session_name", "wetalk_sess")
 	beego.BConfig.WebConfig.Session.SessionCookieLifeTime = Cfg.MustInt("session", "session_life_time", 0)
 	beego.BConfig.WebConfig.Session.SessionGCMaxLifetime = Cfg.MustInt64("session", "session_gc_time", 86400)
