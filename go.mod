@@ -16,4 +16,5 @@ require (
 	github.com/slene/blackfriday v0.0.0-20140117134005-fd3fc8f180b2
 )
 
-replace github.com/beego/wetalk => /Users/ln/mysrc/go/wetalk
+//replace github.com/beego/wetalk => /Users/ln/mysrc/go/wetalk
+replace github.com/beego/wetalk => /home/zcw/mysrc/wetalk

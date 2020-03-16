@@ -51,6 +51,7 @@ func OAuthRedirect(ctx *context.Context) {
 	redirect, err := setting.SocialAuth.OAuthRedirect(ctx)
 	if err != nil {
 		beego.Error("OAuthRedirect", err)
+		return
 	}
 
 	if len(redirect) > 0 {

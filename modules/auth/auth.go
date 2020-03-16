@@ -17,8 +17,10 @@ package auth
 import (
 	"encoding/hex"
 	"fmt"
-	"github.com/astaxie/beego/context"
 	"strings"
+
+	"github.com/astaxie/beego/context"
+
 	// "time"
 
 	"github.com/astaxie/beego"
