@@ -11,6 +11,7 @@ require (
 	github.com/beego/wetalk v0.0.0-20160915090959-b0d9d4d558e3
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/howeyc/fsnotify v0.9.0
+	github.com/lib/pq v1.0.0
 	github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646
 	github.com/shiena/ansicolor v0.0.0-20151119151921-a422bbe96644 // indirect
 	github.com/slene/blackfriday v0.0.0-20140117134005-fd3fc8f180b2

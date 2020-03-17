@@ -32,6 +32,7 @@ import (
 	"github.com/beego/wetalk/setting"
 
 	_ "github.com/go-sql-driver/mysql"
+	_ "github.com/lib/pq"
 )
 
 // We have to call a initialize function manully
@@ -82,6 +83,7 @@ func main() {
 	beego.Router("/category/:slug", posts, "get:Category")
 	beego.Router("/topic/:slug", posts, "get:Topic;post:TopicSubmit")
 
+	//new post
 	postR := new(post.PostRouter)
 	beego.Router("/new", postR, "get:New;post:NewSubmit")
 	beego.Router("/post/:post([0-9]+)", postR, "get:Single;post:SingleSubmit")

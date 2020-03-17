@@ -15,8 +15,9 @@
 package auth
 
 import (
-	"github.com/astaxie/beego"
 	"strings"
+
+	"github.com/astaxie/beego"
 
 	"github.com/beego/wetalk/modules/auth"
 	"github.com/beego/wetalk/modules/models"
@@ -164,6 +165,7 @@ func (this *RegisterRouter) Register() {
 
 	// Create new user.
 	user := new(models.User)
+	user.Lang = 1
 
 	if err := auth.RegisterUser(user, form.UserName, form.Email, form.Password); err == nil {
 		auth.SendRegisterMail(this.Locale, user)

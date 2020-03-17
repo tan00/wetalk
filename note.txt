@@ -1,0 +1,12 @@
+1. 配置文件中没有社交帐号登录选项时,登录 /login 循环重定向问题.  
+   fix: OAuthRedirect 函数流程有问题,  检查出错提前返回即可
+
+2. session临时文件放在工作目录的问题. 修改配置源码和ini配置文件. 设置临时文件放到/tmp下
+
+3. 未配置邮箱服务器时, 无法发送验证邮件. 手动修改数据库 is_active字段为1 即可
+
+3. admin管理员问题. admin也在User结构体中. 手动修改数据库 is_admin为1即可
+
+4. mysql字符集问题,中文显示为?? ,删除数据库重建为utf8mb4也不行, 更换为postgresql解决, is_active,is_admin 和mysql不一样. 应为 f 或 t
+
+
